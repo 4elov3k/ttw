@@ -21,7 +21,7 @@ const arrayOfSigns = Object.keys(signs);
 function fetchDataToJSON (fetchData) {
     const data = {
         horoscope: fetchData,
-        date: new Date().toLocaleDateString()
+        date: new Date().toLocaleDateString('Ru', { timeZone: 'Europe/Moscow' })
     };
     fs.writeFileSync('./db.json', JSON.stringify(data), {encoding: 'utf8', flag: 'w'})
 };
