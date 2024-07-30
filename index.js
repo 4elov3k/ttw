@@ -61,7 +61,7 @@ client.on('message', (channel, tags, message, self) => {
     const intro = "Солнышко!"
     if(self) return;
     if(arrayOfSigns.includes(message.toLowerCase())) {
-        if(readDataFromJSON().date !== new Date().toLocaleDateString()){
+        if(readDataFromJSON().date !== new Date().toLocaleDateString('Ru', { timeZone: 'Europe/Moscow' })) {
             parser().then(() => {
                 fetchDataToJSON(arrOfHoroscopes);
             })
@@ -80,7 +80,9 @@ client.on('message', (channel, tags, message, self) => {
 
         client.say(channel, `@${tags.username}, Дратуте`);
     }
-
+    if (message. toLowerCase()==='!date'){
+        client.say(channel, readDataFromJSON().date)
+    }
 
     if(message.toLowerCase().match('@4elov3k опять ты')) {
 
