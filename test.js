@@ -63,6 +63,7 @@ function getHoroscope(linkEnd,sign) {
 }
 
 
+
 const client = new tmi.Client({
     options: { debug: true },
     identity: {
